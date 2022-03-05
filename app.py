@@ -28,11 +28,11 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # tv country
     elif request.args.get('cwzqU') == 'tv-discover' and request.args.get('dnrnF'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey1']}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&watch_region={request.args.get('dnrnF')}&with_watch_monetization_types=flatrate&with_status=0&with_type=0")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey2']}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&watch_region={request.args.get('dnrnF')}&with_watch_monetization_types=flatrate&with_status=0&with_type=0")
         return jsonify(apiResponse.json()), 200
     # multisearch search page
     elif request.args.get('gmLZW') == 'multi' and request.args.get('GfRGV') and request.args.get('domAV'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/search/multi?api_key={config['apikey1']}&language=en-US&query={request.args.get('GfRGV')}&page=${request.args.get('domAV')}&include_adult=true")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/search/multi?api_key={config['apikey2']}&language=en-US&query={request.args.get('GfRGV')}&page=${request.args.get('domAV')}&include_adult=true")
         return jsonify(apiResponse.json()), 200
     #movie discover page
     elif request.args.get('9Yj7O') == 'movie-discover' and request.args.get('NenGg'):
@@ -48,15 +48,15 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # tv discover with page and with_genres
     elif request.args.get('ba6Yi') == 'tv-discover' and request.args.get('Ramm4') and request.args.get('SDAT0'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey2']}&sort_by=popularity.desc&page=${request.args.get('Ramm4')}&with_genres=${request.args.get('SDAT0')}&with_watch_monetization_types=flatrate")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey3']}&sort_by=popularity.desc&page=${request.args.get('Ramm4')}&with_genres=${request.args.get('SDAT0')}&with_watch_monetization_types=flatrate")
         return jsonify(apiResponse.json()), 200
     #tv discover with page
     elif request.args.get('zgh0z') == 'tv-discover' and request.args.get('Hgz6x'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey2']}&language=en-US&sort_by=popularity.desc&page={request.args.get('Hgz6x')}&with_watch_monetization_types=flatrate")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey3']}&language=en-US&sort_by=popularity.desc&page={request.args.get('Hgz6x')}&with_watch_monetization_types=flatrate")
         return jsonify(apiResponse.json()), 200
     #tv discover with page and langCode
     elif request.args.get('m0hLX') == 'tv-discover' and request.args.get('uq7cO') and request.args.get('VEtR2'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey2']}&sort_by=popularity.desc&page=${request.args.get('uq7cO')}&with_original_language=${request.args.get('VEtR2')}&with_watch_monetization_types=flatrate")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey3']}&sort_by=popularity.desc&page=${request.args.get('uq7cO')}&with_original_language=${request.args.get('VEtR2')}&with_watch_monetization_types=flatrate")
         return jsonify(apiResponse.json()), 200
     # movie similiar with id
     elif request.args.get('kEli7') == 'movie-similar' and request.args.get('yMzNE'):
@@ -64,7 +64,7 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # movie with id
     elif request.args.get('YkYYt') == 'movie' and request.args.get('1Rc7F'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/{request.args.get('1Rc7F')}?api_key={config['apikey2']}&language=en-US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/{request.args.get('1Rc7F')}?api_key={config['apikey3']}&language=en-US")
         return jsonify(apiResponse.json()), 200
     # movie credits with id 
     elif request.args.get('mtBR7') == 'movie-credits' and request.args.get('PC6sL'):
@@ -72,7 +72,7 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # movie videos with id
     elif request.args.get('zFhPU') == 'movie-videos' and request.args.get('dSSeb'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/{request.args.get('dSSeb')}/videos?api_key={config['apikey2']}&language=en-US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/{request.args.get('dSSeb')}/videos?api_key={config['apikey1']}&language=en-US")
         return jsonify(apiResponse.json()), 200
     #tv similar with id
     elif request.args.get('vxaki') == 'tv-similar' and request.args.get('g4cMf'):
@@ -84,15 +84,15 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # tv credits with id
     elif request.args.get('IaNkp') == 'tv-credits' and request.args.get('DsdOv'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/${request.args.get('DsdOv')}/credits?api_key={config['apikey2']}&language=en-US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/${request.args.get('DsdOv')}/credits?api_key={config['apikey3']}&language=en-US")
         return jsonify(apiResponse.json()), 200
     # tv videos with id
     elif request.args.get('v1C8s') == 'tv-videos' and request.args.get('DzzAO'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/${request.args.get('DzzAO')}/videos?api_key={config['apikey2']}&language=en-US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/${request.args.get('DzzAO')}/videos?api_key={config['apikey3']}&language=en-US")
         return jsonify(apiResponse.json()), 200
     # movie external ids with id
     elif request.args.get('QxY40') == 'movie-external-ids' and request.args.get('zCt59'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/${request.args.get('DzzAO')}/videos?api_key={config['apikey2']}&language=en-US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/${request.args.get('DzzAO')}/videos?api_key={config['apikey3']}&language=en-US")
         return jsonify(apiResponse.json()), 200
     # tv external ids with id
     elif request.args.get('hl2Oh') == 'tv-external-ids' and request.args.get('Ho1ID'):
