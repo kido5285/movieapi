@@ -12,7 +12,7 @@ def admin():
         apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/popular?api_key={config['apikey1']}&language=en-US&page={request.args.get('Og4Re')}")
         return jsonify(apiResponse.json()), 200
     elif request.args.get('I2g9G') == 'movie-top-rated' and request.args.get('QYbSR'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/top_rated?api_key={config['apikey1']}&language=en-US&page={request.args.get('QYbSR')}&region=US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/top_rated?api_key={config['apikey1']}&language=en-US&page={request.args.get('QYbSR')}")
         return jsonify(apiResponse.json()), 200
     elif request.args.get('fl18E') == 'movie-now-playing' and request.args.get('YZBDy'):
         apiResponse = requests.get(f"https://api.themoviedb.org/3/movie/now_playing?api_key={config['apikey1']}&language=en-US&page={request.args.get('YZBDy')}")
@@ -81,7 +81,7 @@ def admin():
         return jsonify(apiResponse.json()), 200
     #tv similar with id
     elif request.args.get('vxaki') == 'tv-similar' and request.args.get('g4cMf'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/{request.args.get('g4cMf')}/similar?api_key={config['apikey2']}&language=en-US&page=1")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/{request.args.get('g4cMf')}/similar?api_key={config['apikey2']}&language=en-US&page=11")
         return jsonify(apiResponse.json()), 200
     # tv season with only id <-- no specified season
     elif request.args.get('92B9s') == 'tv-season' and request.args.get('xd3da'):
