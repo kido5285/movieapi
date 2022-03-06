@@ -97,7 +97,7 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # movie external ids with id
     elif request.args.get('QxY40') == 'movie-external-ids' and request.args.get('zCt59'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/{request.args.get('DzzAO')}/videos?api_key={config['apikey3']}&language=en-US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/{request.args.get('zCt59')}/videos?api_key={config['apikey3']}&language=en-US")
         return jsonify(apiResponse.json()), 200
     # tv external ids with id
     elif request.args.get('hl2Oh') == 'tv-external-ids' and request.args.get('Ho1ID'):
