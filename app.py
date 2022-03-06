@@ -26,7 +26,7 @@ def admin():
         return jsonify(apiResponse.json()), 200
     #tv id
     elif request.args.get('CiGiN') == 'tv' and request.args.get('rjusm'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/{request.args.get('rjusm')}?api_key=${config['apikey1']}&language=en-US")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/{request.args.get('rjusm')}?api_key={config['apikey1']}&language=en-US")
         return jsonify(apiResponse.json()), 200
     # tv country
     elif request.args.get('cwzqU') == 'tv-discover' and request.args.get('dnrnF'):
