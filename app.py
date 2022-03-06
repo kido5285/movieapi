@@ -19,12 +19,11 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # with gens and exclude gens
     elif request.args.get('bUCtG') == 'movie-discover' and request.args.get('s0XEd') and request.args.get('2UjJE'):
-        if request.args.get('s0XEd') == '' and request.args.get('2UjJE') == '':
-            apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?api_key={config['apikey1']}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate")
-            return jsonify(apiResponse.json()), 200
-        else:
-            apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?api_key={config['apikey1']}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_genres={request.args.get('s0XEd')}&without_genres={request.args.get('2UjJE')}&with_watch_monetization_types=flatrate")
-            return jsonify(apiResponse.json()), 200
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?api_key={config['apikey1']}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_genres={request.args.get('s0XEd')}&without_genres={request.args.get('2UjJE')}&with_watch_monetization_types=flatrate")
+        return jsonify(apiResponse.json()), 200
+    elif request.args.get('bUCtG') == 'movie-discover' and request.args.get('s0XEd') == '' and request.args.get('2UjJE') == '':
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?api_key={config['apikey1']}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate")
+        return jsonify(apiResponse.json()), 200
     #tv id
     elif request.args.get('CiGiN') == 'tv' and request.args.get('rjusm'):
         apiResponse = requests.get(f"https://api.themoviedb.org/3/tv/{request.args.get('rjusm')}?api_key=${config['apikey1']}&language=en-US")
