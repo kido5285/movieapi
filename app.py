@@ -30,7 +30,7 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # tv country
     elif request.args.get('cwzqU') == 'tv-discover' and request.args.get('dnrnF'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey2']}&language=en-US&sort_by=popularity.desc&page=1&include_null_first_air_dates=false&watch_region={request.args.get('dnrnF')}&with_watch_monetization_types=flatrate&with_status=0&with_type=0")
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey2']}&language=en-US&sort_by=popularity.desc&page=1&include_null_first_air_dates=false&with_original_language={request.args.get('dnrnF')}&with_watch_monetization_types=flatrate&with_status=0&with_type=0")
         return jsonify(apiResponse.json()), 200
     elif request.args.get('cwzqU') == 'tv-discover' and request.args.get('dnrnF') == '':
         apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?api_key={config['apikey2']}&language=en-US&sort_by=popularity.desc&page=1&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0")
