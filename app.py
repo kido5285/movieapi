@@ -112,14 +112,3 @@ def fourOfour(self):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-# hl2Oh
-# Ho1ID
-# BEQx8
-# RNIBf
-# cGRMg
-# lMCK9
-# QwUfY
-# 87tPK
-# X3q0J
-# 9IM0m
