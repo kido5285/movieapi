@@ -34,10 +34,10 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # with gens and exclude gens
     elif request.args.get('bUCtG') == 'movie-discover' and request.args.get('s0XEd') and request.args.get('2UjJE'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres={request.args.get('s0XEd')}&without_genres={request.args.get('2UjJE')}&with_watch_monetization_types=flatrate", headers=headers)
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_genres={request.args.get('s0XEd')}&without_genres={request.args.get('2UjJE')}&with_watch_monetization_types=flatrate", headers=headers)
         return jsonify(apiResponse.json()), 200
     elif request.args.get('bUCtG') == 'movie-discover' and request.args.get('s0XEd') == '' and request.args.get('2UjJE') == '':
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate", headers=headers)
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate", headers=headers)
         return jsonify(apiResponse.json()), 200
     #tv id
     elif request.args.get('CiGiN') == 'tv' and request.args.get('rjusm'):
@@ -56,19 +56,19 @@ def admin():
         return jsonify(apiResponse.json()), 200
     # multisearch search page
     elif request.args.get('gmLZW') == 'multi' and request.args.get('GfRGV') and request.args.get('domAV'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/search/multi?language=en-US&query={request.args.get('GfRGV')}&page={request.args.get('domAV')}&include_adult=false", headers=headers)
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/search/multi?language=en-US&query={request.args.get('GfRGV')}&page={request.args.get('domAV')}&include_adult=true", headers=headers)
         return jsonify(apiResponse.json()), 200 
     #movie discover page
     elif request.args.get('9Yj7O') == 'movie-discover' and request.args.get('NenGg'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page={request.args.get('NenGg')}&with_watch_monetization_types=flatrate", headers=headers)
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page={request.args.get('NenGg')}&with_watch_monetization_types=flatrate", headers=headers)
         return jsonify(apiResponse.json()), 200
     # movie discover page and with genres
     elif request.args.get('6xqAd') == 'movie-discover' and request.args.get('XVQBn') and request.args.get('6kxsZ'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page={request.args.get('XVQBn')}&with_genres={request.args.get('6kxsZ')}&with_watch_monetization_types=flatrate", headers=headers)
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page={request.args.get('XVQBn')}&with_genres={request.args.get('6kxsZ')}&with_watch_monetization_types=flatrate", headers=headers)
         return jsonify(apiResponse.json()), 200
     #movie discover page and langcode
     elif request.args.get('BgB3z') == 'movie-discover' and request.args.get('GZ5IV') and request.args.get('X9Avg'):
-        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&page={request.args.get('GZ5IV')}&with_original_language={request.args.get('X9Avg')}&with_watch_monetization_types=flatrate", headers=headers)
+        apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&include_adult=true&include_video=false&page={request.args.get('GZ5IV')}&with_original_language={request.args.get('X9Avg')}&with_watch_monetization_types=flatrate", headers=headers)
         return jsonify(apiResponse.json()), 200
     # tv discover with page and with_genres
     elif request.args.get('ba6Yi') == 'tv-discover' and request.args.get('Ramm4') and request.args.get('SDAT0'):
