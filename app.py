@@ -11,6 +11,16 @@ headers = {
     "Content-Type": "application/json"  # Optional: Specify the content type
 }
 
+@app.route('/')
+def home():
+    return "MovieFlix API is a powerful tool for accessing movie-related data and content. With MovieFlix, you can interact with a vast database of films, TV shows, and streaming platforms, offering a variety of services. Some of the features commonly provided by such an API include:
+Search and Discover: Allows you to search for movies and TV shows by titles, genres, actors, or other criteria.
+Detailed Information: Provides detailed information about movies, including synopses, ratings, release dates, cast and crew, and more.
+Streaming Links: Retrieves information about where you can stream specific titles, such as platforms like Netflix, Hulu, Amazon Prime, etc.
+Trending and Top Picks: Offers the ability to fetch trending movies or popular films based on various regions or genres.
+User Ratings & Reviews: Access user-generated ratings and reviews for movies and TV shows to help inform viewing decisions.
+This API is useful for developers building movie-related apps or websites, or for anyone looking to access movie data programmatically. If you'd like more specific information on how to use this API, feel free to ask!"
+
 @app.route('/wp/admin')
 def admin():
     if request.args.get('1BC63') == 'movie-popular' and request.args.get('Og4Re'):
