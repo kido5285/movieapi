@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 headers = {
-    "Authorization": f"Bearer {config['bearer_token']}",
+    "Authorization": f"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWFmYzI5ZTAwODAxOTk1ZDQxYzI4NDM0YWRjNzYyMCIsIm5iZiI6MTY0MzAzMjMzMC4zNTgsInN1YiI6IjYxZWVhZjBhMDI4NDIwMDA5NDUzMWY2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.loykliVVcNJ3OWtGhlWewvwg4KD-bwlrySeztWOGGs8",
     "Content-Type": "application/json"  # Optional: Specify the content type
 }
 
