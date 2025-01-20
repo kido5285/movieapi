@@ -33,7 +33,7 @@ def admin():
     elif request.args.get('CiGiN') == 'tv' and request.args.get('rjusm'):
         url1=f"https://api.themoviedb.org/3/find/{request.args.get('rjusm')}?external_source=imdb_id"
         apiResponse = {
-            'res': requests.get(url1, headers=headers)
+            'res': requests.get(url1, headers=headers), 
             'url': url1
             }
         return jsonify(apiResponse), 200
