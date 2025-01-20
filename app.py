@@ -33,10 +33,17 @@ def admin():
     elif request.args.get('CiGiN') == 'tv' and request.args.get('rjusm'):
         response = requests.get(f"https://api.themoviedb.org/3/find/{request.args.get('rjusm')}?external_source=imdb_id", headers=headers)
         apiResponse = {
+<<<<<<< HEAD
             'res': response.json(),
             'url': f"https://api.themoviedb.org/3/find/{request.args.get('rjusm')}?external_source=imdb_id"
         }
         return jsonify(apiResponse), 200
+=======
+            'res': requests.get(url1, headers=headers), 
+            'url': url1
+            }
+        return jsonify(apiResponse.json()), 200
+>>>>>>> origin/main
     # tv country
     elif request.args.get('cwzqU') == 'tv-discover' and request.args.get('dnrnF'):
         apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?language=en-US&sort_by=popularity.desc&page=1&include_null_first_air_dates=false&with_original_language={request.args.get('dnrnF')}&with_watch_monetization_types=flatrate&with_status=0&with_type=0", headers=headers)
