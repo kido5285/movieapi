@@ -36,7 +36,7 @@ def admin():
             'res': requests.get(url1, headers=headers)
             'url': url1
             }
-        return jsonify(apiResponse.json()), 200
+        return jsonify(apiResponse), 200
     # tv country
     elif request.args.get('cwzqU') == 'tv-discover' and request.args.get('dnrnF'):
         apiResponse = requests.get(f"https://api.themoviedb.org/3/discover/tv?language=en-US&sort_by=popularity.desc&page=1&include_null_first_air_dates=false&with_original_language={request.args.get('dnrnF')}&with_watch_monetization_types=flatrate&with_status=0&with_type=0", headers=headers)
