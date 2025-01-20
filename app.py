@@ -31,11 +31,11 @@ def admin():
         return jsonify(apiResponse.json()), 200
     #tv id
     elif request.args.get('CiGiN') == 'tv' and request.args.get('rjusm'):
-        url1=f"https://api.themoviedb.org/3/find/{request.args.get('rjusm')}?external_source=imdb_id"
+        response = requests.get(f"https://api.themoviedb.org/3/find/{request.args.get('rjusm')}?external_source=imdb_id", headers=headers)
         apiResponse = {
-            'res': requests.get(url1, headers=headers) ,
-            'url': url1
-            }
+            'res': response.json(),
+            'url': f"https://api.themoviedb.org/3/find/{request.args.get('rjusm')}?external_source=imdb_id"
+        }
         return jsonify(apiResponse), 200
     # tv country
     elif request.args.get('cwzqU') == 'tv-discover' and request.args.get('dnrnF'):
